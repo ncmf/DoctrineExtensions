@@ -1,7 +1,7 @@
 services:
     # KernelRequest listener
     extension.listener:
-        class: NCMF\DoctrineExtensions\Listener\DoctrineExtensionListener
+        class: NCMF\DoctrineExtensionsBundle\Listener\DoctrineExtensionListener
         calls:
             - [ setContainer, [ "@service_container" ] ]
         tags:

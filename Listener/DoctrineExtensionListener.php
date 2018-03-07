@@ -1,6 +1,6 @@
 <?php
 
-namespace NCMF\DoctrineExtensions\Listener;
+namespace NCMF\DoctrineExtensionsBundle\Listener;
 
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;

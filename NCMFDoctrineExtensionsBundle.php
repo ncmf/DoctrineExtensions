@@ -1,6 +1,6 @@
 <?php
 
-namespace NCMF\DoctrineExtensions;
+namespace NCMF\DoctrineExtensionsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
