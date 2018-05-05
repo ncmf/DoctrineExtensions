@@ -3,7 +3,7 @@
 
 ## Установка
 
-* `composer require ncmf/doctrine-extensions`
+* `composer require ncmf/doctrine-extensions:dev-master`
 * Прописать в config.yml
 
         imports:
