@@ -43,9 +43,6 @@ Acme\SiteBundle\Entity\Section:
         name:
             type: string
             length: 255
-        code:
-            type: string
-            length: 255
     manyToOne:
         root:
             targetEntity: Section
