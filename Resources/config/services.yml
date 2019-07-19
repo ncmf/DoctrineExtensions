@@ -3,7 +3,9 @@ services:
     extension.listener:
         class: NCMF\DoctrineExtensionsBundle\Listener\DoctrineExtensionListener
         calls:
-            - [ setContainer, [ "@service_container" ] ]
+            - method: setContainer
+              arguments:
+                - "@service_container"
         tags:
             # translatable sets locale after router processing
             - { name: kernel.event_listener, event: kernel.request, method: onLateKernelRequest, priority: -10 }
@@ -21,6 +23,7 @@ services:
       calls:
         - [ setAnnotationReader, [ "@annotation_reader" ] ]
         - [ setUserValue, [ "@security.token_storage" ] ]
+      public: true
 
     gedmo.listener.tree:
         class: Gedmo\Tree\TreeListener
@@ -28,6 +31,7 @@ services:
             - { name: doctrine.event_subscriber, connection: default }
         calls:
             - [ setAnnotationReader, [ "@annotation_reader" ] ]
+        public: true
 
     gedmo.listener.translatable:
         class: Gedmo\Translatable\TranslatableListener
@@ -37,6 +41,7 @@ services:
             - [ setAnnotationReader, [ "@annotation_reader" ] ]
             - [ setDefaultLocale, [ %locale% ] ]
             - [ setTranslationFallback, [ false ] ]
+        public: true
 
     gedmo.listener.timestampable:
         class: Gedmo\Timestampable\TimestampableListener
@@ -44,6 +49,7 @@ services:
             - { name: doctrine.event_subscriber, connection: default }
         calls:
             - [ setAnnotationReader, [ "@annotation_reader" ] ]
+        public: true
 
     gedmo.listener.sluggable:
         class: Gedmo\Sluggable\SluggableListener
@@ -51,6 +57,7 @@ services:
             - { name: doctrine.event_subscriber, connection: default }
         calls:
             - [ setAnnotationReader, [ "@annotation_reader" ] ]
+        public: true
 
     gedmo.listener.sortable:
         class: Gedmo\Sortable\SortableListener
@@ -58,6 +65,7 @@ services:
             - { name: doctrine.event_subscriber, connection: default }
         calls:
             - [ setAnnotationReader, [ "@annotation_reader" ] ]
+        public: true
 
     gedmo.listener.loggable:
         class: Gedmo\Loggable\LoggableListener
@@ -65,3 +73,4 @@ services:
             - { name: doctrine.event_subscriber, connection: default }
         calls:
             - [ setAnnotationReader, [ "@annotation_reader" ] ]
+        public: true
